@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // *** 🎯 DEBES REEMPLAZAR ESTA CADENA CON LA URL QUE TE DIO APPS SCRIPT ***
-    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwB0ILClDlyofK7TKouASLs0ppGuzbKU-FFMKm7o7xfv9QPyhIWlR1DabFzwfbszT"; 
+    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwB0ILClDlyofK7TKouASLs0ppGuzbKU-FFMKm7o7xfv9QPyhIWlR1DabFzwfbszT9hhQ/exec"; 
     // **********************************************************************
 
     const clientForm = document.getElementById('clientForm');
@@ -118,4 +118,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     showTab('registro');
+
 });
