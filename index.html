@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Deportivo - Google Sheets DB</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+</head>
+<body>
+
+    <main class="container">
+        <nav>
+            <button class="tab-button active" onclick="showTab('registro')">Registro de Cliente</button>
+            <button class="tab-button" onclick="showTab('informes')">Generar Informe (Deshabilitado)</button>
+        </nav>
+
+        <section id="registro" class="tab-content active">
+            <h2>Formulario de Evaluación</h2>
+            <form id="clientForm">
+                <h3>Datos Personales</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre_completo">Nombre Completo:</label>
+                        <input type="text" id="nombre_completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad">
+                    </div>
+                    <div class="form-group">
+                        <label for="sexo">Sexo:</label>
+                        <select id="sexo">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_evaluacion">Fecha de Evaluación:</label>
+                        <input type="date" id="fecha_evaluacion" required>
+                    </div>
+                </div>
+
+                <h3>Datos Antropométricos</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="peso_kg">Peso (kg):</label>
+                        <input type="number" step="0.1" id="peso_kg" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estatura_cm">Estatura (cm):</label>
+                        <input type="number" step="0.1" id="estatura_cm" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imc">IMC (Calculado):</label>
+                        <input type="number" id="imc" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="grasa_corporal_pct">% Grasa Corporal:</label>
+                        <input type="number" step="0.1" id="grasa_corporal_pct">
+                    </div>
+                    <div class="form-group">
+                        <label for="masa_muscular">Masa Muscular (kg):</label>
+                        <input type="number" step="0.1" id="masa_muscular">
+                    </div>
+                </div>
+
+                <h3>Medidas Corporales (cm)</h3>
+                <div class="form-grid-small">
+                    <div class="form-group">
+                        <label for="med_brazos">Brazos:</label>
+                        <input type="number" step="0.1" id="med_brazos">
+                    </div>
+                    <div class="form-group">
+                        <label for="med_pecho">Pecho:</label>
+                        <input type="number" step="0.1" id="med_pecho">
+                    </div>
+                    <div class="form-group">
+                        <label for="med_cintura">Cintura:</label>
+                        <input type="number" step="0.1" id="med_cintura">
+                    </div>
+                    <div class="form-group">
+                        <label for="med_caderas">Caderas:</label>
+                        <input type="number" step="0.1" id="med_caderas">
+                    </div>
+                    <div class="form-group">
+                        <label for="med_piernas">Piernas:</label>
+                        <input type="number" step="0.1" id="med_piernas">
+                    </div>
+                </div>
+
+                <h3>Información de Salud</h3>
+                <div class="form-group-full">
+                    <label for="enfermedades_lesiones">Enfermedades o Lesiones Previas:</label>
+                    <textarea id="enfermedades_lesiones" rows="3"></textarea>
+                </div>
+                <div class="form-group-full">
+                    <label for="alergias">Alergias:</label>
+                    <textarea id="alergias" rows="2"></textarea>
+                </div>
+                <div class="form-group-full">
+                    <label for="cirugias_recientes">Cirugías Recientes:</label>
+                    <textarea id="cirugias_recientes" rows="2"></textarea>
+                </div>
+                <div class="form-group-full">
+                    <label for="medicamentos_actuales">Medicamentos Actuales:</label>
+                    <textarea id="medicamentos_actuales" rows="2"></textarea>
+                </div>
+                <div class="form-group-full">
+                    <label for="estres_sueno">Estrés / Sueño:</label>
+                    <textarea id="estres_sueno" rows="2"></textarea>
+                </div>
+                
+
+                <button type="submit" class="submit-btn">Guardar Cliente en Google Sheets</button>
+            </form>
+        </section>
+
+        <section id="informes" class="tab-content">
+            <h2>Funcionalidad de Informes</h2>
+            <div id="reportResult">
+                <p>La funcionalidad de **Búsqueda y Generación de Informes** está temporalmente deshabilitada.</p>
+                <p>Para buscar clientes en Google Sheets (GET), se requiere un código Apps Script adicional y más complejo que el usado para guardar datos (POST).</p>
+                <p>Utilice la hoja de cálculo directamente para ver y filtrar los registros guardados.</p>
+            </div>
+            <div class="search-bar" style="display:none;">
+                <input type="text" id="searchName" placeholder="Buscar cliente por nombre...">
+                <button id="searchButton">Buscar</button>
+            </div>
+            <button id="downloadPdfButton" style="display:none;">Descargar Informe PDF</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

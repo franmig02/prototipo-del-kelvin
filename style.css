@@ -1,0 +1,190 @@
+/* Estilos Generales */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+h2, h3 {
+    color: #0056b3;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Navegación de Pestañas */
+nav {
+    display: flex;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+.tab-button {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    transition: all 0.2s ease;
+}
+.tab-button:hover {
+    background-color: #e9ecef;
+}
+.tab-button.active {
+    color: #0056b3;
+    border-bottom: 3px solid #0056b3;
+    background-color: #fff;
+}
+.tab-content {
+    padding: 30px;
+    display: none; /* Ocultas por defecto */
+}
+.tab-content.active {
+    display: block; /* Muestra la pestaña activa */
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.form-grid-small {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+.form-group, .form-group-full {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label, .form-group-full label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.form-group input, .form-group select, .form-group-full textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.form-group input[readonly] {
+    background-color: #eee;
+}
+.form-group-full textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-btn, .search-bar button, #downloadPdfButton {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+.submit-btn:hover, .search-bar button:hover, #downloadPdfButton:hover {
+    background-color: #0056b3;
+}
+
+/* Sección de Informes */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#reportResult {
+    margin-top: 20px;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fdfdfd;
+}
+#downloadPdfButton {
+    margin-top: 20px;
+    background-color: #28a745; /* Verde */
+}
+#downloadPdfButton:hover {
+    background-color: #218838;
+}
+
+/* Estilos del Informe (dentro de #reportResult) */
+.report {
+    padding: 20px;
+}
+.report-header {
+    text-align: center;
+    border-bottom: 2px solid #0056b3;
+    margin-bottom: 20px;
+}
+.report-header h1 {
+    margin: 0;
+    color: #0056b3;
+}
+.report-header p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 5px 0 15px 0;
+}
+.report-section {
+    margin-bottom: 25px;
+}
+.report-section h3 {
+    background-color: #f4f7f6;
+    padding: 10px;
+    border-radius: 5px;
+    color: #0056b3;
+    border-bottom: none;
+    margin-top: 0;
+}
+.report-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.report-item {
+    background: #fcfcfc;
+    padding: 10px;
+    border-radius: 4px;
+}
+.report-item strong {
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+.report-item span {
+    color: #555;
+}
+.report-notes {
+    background: #fffbef;
+    border-left: 4px solid #ffc107;
+    padding: 10px;
+}
