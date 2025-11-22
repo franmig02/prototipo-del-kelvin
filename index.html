@@ -128,17 +128,18 @@
         </section>
 
         <section id="informes" class="tab-content">
-            <h2>Funcionalidad de Informes</h2>
-            <div id="reportResult">
-                <p>La funcionalidad de **Búsqueda y Generación de Informes** está temporalmente deshabilitada.</p>
-                <p>Para buscar clientes en Google Sheets (GET), se requiere un código Apps Script adicional y más complejo que el usado para guardar datos (POST).</p>
-                <p>Utilice la hoja de cálculo directamente para ver y filtrar los registros guardados.</p>
-            </div>
-            <div class="search-bar" style="display:none;">
+            <h2>Generar Informe</h2>
+            
+            <div class="search-bar">
                 <input type="text" id="searchName" placeholder="Buscar cliente por nombre...">
                 <button id="searchButton">Buscar</button>
             </div>
-            <button id="downloadPdfButton" style="display:none;">Descargar Informe PDF</button>
+
+            <div id="reportResult">
+                <p>Busca un cliente para ver sus detalles aquí.</p>
+            </div>
+
+            <button id="downloadPdfButton" style="display:none; margin-top:20px;">Descargar Informe PDF</button>
         </section>
     </main>
 
