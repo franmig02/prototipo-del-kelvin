@@ -188,3 +188,74 @@ form {
     border-left: 4px solid #ffc107;
     padding: 10px;
 }
+/* --- NUEVO: Estilos para la sección de Compartir Link --- */
+.share-box {
+    background-color: #e0f2f1;
+    border: 1px solid #26a69a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.share-box p {
+    margin: 0;
+    font-weight: 600;
+    color: #00695c;
+    white-space: nowrap;
+}
+
+.link-container {
+    display: flex;
+    flex-grow: 1;
+    gap: 5px;
+}
+
+.link-container input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    background: #fff;
+}
+
+.copy-btn {
+    background-color: #26a69a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.copy-btn:hover { background-color: #00897b; }
+
+/* --- NUEVO: Estilos para el Informe Editable --- */
+.report-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px dashed #ccc; /* Línea punteada para indicar que es editable */
+    background: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    color: #333;
+    font-weight: inherit;
+    padding: 2px 0;
+}
+
+.report-input:focus {
+    outline: none;
+    border-bottom: 2px solid #0056b3;
+    background-color: #f0f8ff;
+}
+
+/* Ajuste para que los inputs se vean bien dentro de las cajas del reporte */
+.report-item {
+    display: flex;
+    flex-direction: column;
+}

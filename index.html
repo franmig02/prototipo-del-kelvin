@@ -14,8 +14,19 @@
     <main class="container">
         <nav>
             <button class="tab-button active" onclick="showTab('registro')">Registro de Cliente</button>
-            <button class="tab-button" onclick="showTab('informes')">Generar Informe (Deshabilitado)</button>
+            <button class="tab-button" onclick="showTab('informes')">Generar Informe </button>
         </nav>
+        
+<div class="container" style="margin-top: 20px; padding: 0;">
+    <div class="share-box">
+        <p>📱 Link para Cliente:</p>
+        <div class="link-container">
+            <input type="text" id="mobileFormLink" readonly 
+                value="https://prototipo-del-kelvin-3377-6dzuvvxu9-franmig02s-projects.vercel.app/">
+            <button class="copy-btn" id="copyLinkButton">Copiar</button>
+        </div>
+    </div>
+</div>
 
         <section id="registro" class="tab-content active">
             <h2>Formulario de Evaluación</h2>
@@ -123,7 +134,7 @@
                 </div>
                 
 
-                <button type="submit" class="submit-btn">Guardar Cliente en Google Sheets</button>
+                <button type="submit" class="submit-btn">Guardar </button>
             </form>
         </section>
 
