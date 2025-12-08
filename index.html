@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -19,10 +19,21 @@
         
 <div class="container" style="margin-top: 20px; padding: 0;">
     <div class="share-box">
-        <p>📱 Link para Cliente:</p>
-        <div class="link-container">
-            <input type="text" id="mobileFormLink" readonly 
-                value="https://prototipo-del-kelvin-3377-6dzuvvxu9-franmig02s-projects.vercel.app/">
+        <p>📱 Link para el Cliente:</p>
+
+        <div class="link-container" style="display: flex; gap: 10px; align-items: center;">
+            
+            <!-- Input que abre el link al hacer clic -->
+            <input 
+                type="text" 
+                id="mobileFormLink" 
+                readonly 
+                style="flex: 1; cursor: pointer;" 
+                value="https://prototipo-del-kelvin-3377.vercel.app/"
+                
+            >
+
+            <!-- Botón copiar -->
             <button class="copy-btn" id="copyLinkButton">Copiar</button>
         </div>
     </div>
@@ -34,8 +45,8 @@
                 <h3>Datos Personales</h3>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="nombre_completo">Nombre Completo:</label>
-                        <input type="text" id="nombre_completo" required>
+                        <label for="nombre_completo" >Nombre Completo:</label>
+                        <input type="text" id="nombre_completo" placeholder="!NOMBRE COMPLETO!"  required>
                     </div>
                     <div class="form-group">
                         <label for="edad">Edad:</label>
@@ -129,10 +140,14 @@
                     <textarea id="medicamentos_actuales" rows="2"></textarea>
                 </div>
                 <div class="form-group-full">
-                    <label for="estres_sueno">Estrés / Sueño:</label>
+                    <label for="estres_sueno">Horas de sueño:</label>
                     <textarea id="estres_sueno" rows="2"></textarea>
                 </div>
-                
+                <div class="form-group-full">
+                     <label for="metas_cliente">Metas y Objetivos:</label>
+                    <textarea id="metas_cliente" rows="3"></textarea>
+                </div>
+
 
                 <button type="submit" class="submit-btn">Guardar </button>
             </form>
